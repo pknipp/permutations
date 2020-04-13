@@ -26,7 +26,7 @@ let tsp = function(n){
     }
     interTownDistances.push(interTownDistancesRow);
   }
-
+  //Here are some changes
   // create array of arrays of all possible itineraries
   let perm = function(n){
     if(n === 0){
@@ -65,6 +65,7 @@ let tsp = function(n){
       }
     }
   }
+  console.log(distanceMin);
   return distanceMin;
 }
-
+tsp(3);
