@@ -1,5 +1,40 @@
-let tsp = function(n){
+let tennis = function(){
+
+  let dx1 = 27
+  let dx2 = 36
+  let dy1 = 36
+  let dy2 = 78
+
+  /*
+  js code for finding the least-distance travel-path when sweeping the lines on one side of a Hartru court.
+  This is a modified traveling-salesman problem.  Below are descriptions of the lines.  All positions are
+  expressed in half-feet, relative to an origin at the middle of the baseline.  All lines point in positive
+  direction (either x or y).
+  0: left-outside alley
+  1: baseline portion of left-inside alley
+  2: netward portion of left-inside alley
+  3: left half of service line
+  4: right half of service line
+  5: boundary between service boxes
+  6: (entire) baseline
+  7: baseling portion of right-inside alley
+  8: netward portion of right-inside alley
+  9: right-outside alley
+  */
+
+  let xy = [[[-dx2,  0], [-dx2,dy2]],
+            [[-dx1,  0],[-dx1,dy1]],
+            [[-dx1,dy1],[-dx1,dy2]],
+            [[-dx1,dy1],[   0,dy1]],
+            [[   0,dy1],[ dx1,dy1]],
+            [[   0,dy1],[   0,dy2]],
+            [[-dx2,  0],[ dx2,  0]],
+            [[ dx1,  0],[ dx1,dy1]],
+            [[ dx1,dy1],[ dx1,dy2]],
+            [[ dx2,  0],[ dx2,dy2]]]
+
   // randomly create the coordinates of the towns to be visited by salesman
+  /*
   let x = [];
   let y = [];
   const max = 9;
@@ -16,6 +51,7 @@ let tsp = function(n){
   x.push(0);
   y.push(0);
   console.log('');
+*/
 
   let distance = function(x1,y1,x2,y2){
     return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
@@ -31,6 +67,7 @@ let tsp = function(n){
     interTownDistances.push(interTownDistancesRow);
   }
 
+  const n = 10;
   let perm = function(n){
     let facPerm = 1;
     let rangePerm = [];
@@ -78,4 +115,4 @@ let tsp = function(n){
   }
   console.log(perm(n));
 }
-tsp(4);
+tennis();
