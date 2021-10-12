@@ -78,4 +78,4 @@ let tsp = function(n){
   }
   console.log(perm(n));
 }
-tsp(4);
+tsp(10);
